@@ -1,2 +1,1 @@
-var user = Users.findOne()
-Meteor.subscribe("lessons", user) 
+Meteor.subscribe("lessons", "pupil") 
