@@ -1,0 +1,8 @@
+{
+  "libs": ["underscore", "browser"],
+  "loadEagerly": [],
+  "dontLoad":[".meteor"],
+  "plugins": {
+  "meteor": {}
+     }
+}
