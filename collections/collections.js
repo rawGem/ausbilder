@@ -1,2 +1,2 @@
 Lessons = new Mongo.Collection("lessons")
-Users = new Mongo.Collection("users")
+//Users = new Mongo.Collection("users")
