@@ -8,4 +8,7 @@ Accounts.createUser({
     'role':'admin'
   }
 })
+
+Meteor.loginWithPassword('Dr. Jones', 'password')
+
 Meteor.subscribe("lessons", "admin") 

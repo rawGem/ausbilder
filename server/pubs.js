@@ -1,7 +1,8 @@
 Meteor.publish("lessons", function(user){
-  if (user === "admin") {
+  var loggedInUser = Meteor.users.findOne({_id:this.userId});
+  if (loggedInUser.profile.role === "admin") {
     return Lessons.find()
-  } else if (user === "pupil") {
-    return Lessons.find({name: "Math"})
+  } else if (loggedInUser.role.profile === "pupil") {
+   return Lessons.find({name: "Math"})
   }
 })
