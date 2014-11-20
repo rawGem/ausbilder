@@ -6,4 +6,6 @@
 meteor-platform
 insecure
 accounts-password
+alanning:roles
+accounts-ui
 
