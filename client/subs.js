@@ -11,4 +11,8 @@ Accounts.createUser({
 
 Meteor.loginWithPassword('Dr. Jones', 'password')
 
-Meteor.subscribe("lessons", "admin") 
+lessonsSub = Meteor.subscribe("lessons", "admin") 
+
+if (lessonsSub.ready()) {
+  Blaze.render("lessonsList")
+}
