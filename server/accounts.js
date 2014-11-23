@@ -15,3 +15,13 @@ Meteor.startup(function() {
   }
 });
 
+Accounts.onCreateUser( function(options, user){
+  if (user.username != "Dr. Jones") {
+    user.profile = {role: "pupil"}
+  }
+  //if (typeof user.profile.role === "undefined"){
+  //  user.profile = {role: "pupil"}
+  //}
+  return user
+});
+
