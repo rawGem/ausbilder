@@ -3,8 +3,12 @@
 
 //Meteor.loginWithPassword('Dr. Jones', 'password')
 
-lessonsSub = Meteor.subscribe("lessons") 
+//lessonsSub = Meteor.subscribe("lessons") 
+//
+//if (lessonsSub.ready()) {
+//  Blaze.render("lessonsList")
+//}
 
-if (lessonsSub.ready()) {
-  Blaze.render("lessonsList")
-}
+Tracker.autorun(function(){
+  Meteor.subscribe("lessons")
+})
