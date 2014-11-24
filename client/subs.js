@@ -11,4 +11,5 @@
 
 Tracker.autorun(function(){
   Meteor.subscribe("lessons")
+  Meteor.subscribe("users")
 })
