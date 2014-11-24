@@ -1,9 +1,11 @@
 
 
 Template.usersList.helpers({
+  // try doing all of the filtering
+  // on the client, get it working,
+  // then try to tackle working around
+  // Accounts' autopublish 
   users: function() {
-    console.log(typeof Meteor.users)
-    var u = Meteor.users.find()
     return Meteor.users.find()
   }
 })

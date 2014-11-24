@@ -11,5 +11,5 @@
 
 Tracker.autorun(function(){
   Meteor.subscribe("lessons")
-  Meteor.subscribe("users")
+  Meteor.subscribe("users_for_admin")
 })
