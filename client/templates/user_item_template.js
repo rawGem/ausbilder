@@ -2,6 +2,7 @@ Template.userItem.helpers({
 
   circle: function() {
     var svg = d3.select("body").append("svg")
+    svg.attr("width", 50).attr("height", 50)
     var circle = svg.selectAll("circle")
                     .data([0])
                     .enter()
