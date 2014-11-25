@@ -17,8 +17,13 @@ Meteor.startup(function() {
 
 Accounts.onCreateUser( function(options, user){
   if (!options.profile) {
-    options.profile = {}
-    options.profile.role = "pupil"
+    randomStatus = Math.ceil(Math.random()*10);
+    if(randomStatus >= 5) { randomStatus = randomStatus - 5 };
+    colors = ["red", "blue", "yellow", "green", "purple"];
+
+    options.profile = {};
+    options.profile.role = "pupil";
+    options.profile.status = colors[randomStatus];
     user.profile = options.profile
   } else {
     user.profile = options.profile
