@@ -16,7 +16,7 @@ Template.userItem.helpers({
                         .data([0])
                         .enter()
                         .append("text")
-    circleText.text(this.profile.status)
+    circleText.text(_.first(this.emails).address)
               .attr("x", 20)
               .attr("y", 20)
   }
