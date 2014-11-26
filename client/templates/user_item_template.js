@@ -20,13 +20,4 @@ Template.userItem.helpers({
               .attr("x", 20)
               .attr("y", 20)
   }
-
-  
-   // var text = svg.selectAll("text")
-   //               .data([0])
-   //               .enter()
-   //               .append("text")
-   // text.text("test")
-   //     .attr("fill", black)
-
 })
