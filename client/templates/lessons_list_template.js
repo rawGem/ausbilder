@@ -3,3 +3,9 @@ Template.lessonsList.helpers({
     return Lessons.find()
   }
 })
+
+Template.lessonsList.events({
+  'click': function() {
+    return console.log(this._id)
+  }
+})

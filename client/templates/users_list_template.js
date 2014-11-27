@@ -11,3 +11,4 @@ Template.usersList.helpers({
     return Meteor.users.find({_id: removeCurrentUser })
   }
 })
+

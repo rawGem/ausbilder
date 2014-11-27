@@ -1,5 +1,7 @@
 <template name="usersList">
   {{#each users}}
-    {{> userItem}}
+    <div id="{{this._id}}" class="circle">
+      {{> userItem}}
+    </div>
   {{/each}}
 </template>
