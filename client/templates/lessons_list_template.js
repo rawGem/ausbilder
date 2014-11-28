@@ -1,6 +1,9 @@
 Template.lessonsList.helpers({
   lessons: function() {
-    return Lessons.find()
+    var currentUser = Meteor.user()
+    if (currentUser && currentUser.profile.role === "pupil") {
+      return Lessons.find()
+    }
   }
 })
 
