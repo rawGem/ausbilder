@@ -52,3 +52,8 @@ Template.usersList.events({
 //              .attr("x", 20)
 //              .attr("y", 20)
 //}
+Template.userItem.rendered = function() {
+  $(function() {
+    $( document ).tooltip();
+  });
+}

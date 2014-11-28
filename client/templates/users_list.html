@@ -1,6 +1,6 @@
 <template name="usersList">
   {{#each users}}
-    <div id="{{this._id}}" class="circle">
+    <div id="{{this._id}}" class="circle" title="tooltip">
       {{> userItem}}
     </div>
   {{/each}}
