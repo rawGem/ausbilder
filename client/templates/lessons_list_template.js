@@ -8,7 +8,7 @@ Template.lessonsList.helpers({
 })
 
 Template.lessonsList.events({
-  'click': function() {
-    return console.log(this._id)
-  }
+  'click .status': function() {
+    return console.log("use this to change status")
+  } 
 })
