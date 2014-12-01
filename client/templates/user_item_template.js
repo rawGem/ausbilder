@@ -1,5 +1,6 @@
 
 
+
 //Template.userItem.helpers({
 //  circle: function() {
 //    var selector = "#" + this._id

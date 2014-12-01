@@ -6,8 +6,8 @@ Template.usersList.helpers({
   // then try to tackle working around
   // Accounts' autopublish 
   users: function() {
-    console.log("fired")
-    console.log(Meteor.userId())
+    //console.log("fired")
+    //console.log(Meteor.userId())
     var removeCurrentUser = {$ne: Meteor.userId()}
     return Meteor.users.find({_id: removeCurrentUser })
   }
