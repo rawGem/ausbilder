@@ -30,6 +30,12 @@ Template.usersList.events({
   }
 })
 
+Template.userItem.helpers({
+  email: function() {
+    return "email"
+  }
+})
+
 
 Template.userItem.rendered = function() {
     var selector = "#" + this.data._id
