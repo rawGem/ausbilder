@@ -32,7 +32,7 @@ Template.usersList.events({
 
 Template.userItem.helpers({
   email: function() {
-    return "email"
+    return _.first(this.emails).address
   }
 })
 
