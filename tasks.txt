@@ -1,1 +1,4 @@
 1. Get the user's email into the userlist template 
+2. Turn off Meteor browser sync; maybe a setting in the browser
+3. Customize the tooltip a bit
+4. Add button that allows user to change status

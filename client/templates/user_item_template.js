@@ -42,7 +42,7 @@ Template.userItem.rendered = function() {
     //console.log(selector)
     //console.log(this)
     var svg = d3.select(selector).append("svg")
-    svg.attr("width", 100).attr("height", 100)
+    svg.attr("width", 50).attr("height", 50)
     var circle = svg.selectAll("circle")
                     .data([0])
                     .enter()
