@@ -9,6 +9,8 @@ Template.lessonsList.helpers({
 
 Template.lessonsList.events({
   'click .status': function() {
-    return console.log("use this to change status")
+    var loggedInStudent = Meteor.user()
+    loggedInStudent.profile.status = "red"
+    return console.log(loggedInStudent)
   } 
 })
