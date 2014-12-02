@@ -1,0 +1,4 @@
+# Bugs - add-status-button branch
+1. Signed in as admin, user templates disappear after refresh
+3. Signed in as admin, user templates are duplicated when a user
+   signs-in and signs-out

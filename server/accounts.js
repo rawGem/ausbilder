@@ -3,11 +3,12 @@
 // Indiana Jones, a worthy administrator
 // of things intellectual 
 Meteor.startup(function() {
-  if (Meteor.users.find().count() === 0) {
+  //console.log(Meteor.users.find({username: "Dr. Jones"}).fetch())
+  if ( Meteor.users.find({username: "Dr. Jones"}).fetch().length === 0) {
     Accounts.createUser({
       'username': 'Dr. Jones', 
-      'email': 'indianajones@oxford.edu',
-      'password': 'password',
+      'email': 'indy@o.e',
+      'password': 'pwd',
       'profile': {
         'role':'admin'
       }
