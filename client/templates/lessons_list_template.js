@@ -9,8 +9,9 @@ Template.lessonsList.helpers({
 
 Template.lessonsList.events({
   'click .status': function() {
-    var loggedInStudent = Meteor.user()
-    loggedInStudent.profile.status = "red"
-    return console.log(loggedInStudent)
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.status": "red"}})
+    //var loggedInStudent = Meteor.user()
+    //loggedInStudent.profile.status = "red"
+    //return console.log(loggedInStudent)
   } 
 })

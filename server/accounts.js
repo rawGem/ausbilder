@@ -2,6 +2,7 @@
 // make an admin if there isn't one
 // Indiana Jones, a worthy administrator
 // of things intellectual 
+
 Meteor.startup(function() {
   //console.log(Meteor.users.find({username: "Dr. Jones"}).fetch())
   if ( Meteor.users.find({username: "Dr. Jones"}).fetch().length === 0) {
