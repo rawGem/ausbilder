@@ -1,7 +1,3 @@
-// change second argument to "pupil" to get 
-// a different cursor back from the db
-
-//Meteor.loginWithPassword('Dr. Jones', 'password')
 
 //lessonsSub = Meteor.subscribe("lessons") 
 //

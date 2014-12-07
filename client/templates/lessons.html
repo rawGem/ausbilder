@@ -7,5 +7,18 @@
   {{#each lessons}}
     {{> lessonItem}}
   {{/each}}
+
+  {{#each lessonsStudent}}
+    {{> lessonStudentItem}}
+  {{/each}}
   <button class="status">Change Status</button>
+  <button class="new-lesson">New Lesson</button>
+  <button class="inc-progress">Inc Progress</button>
+</template>
+
+<template name="lessonStudentItem">
+    <h1>
+      {{name}}
+      {{progress}}
+    </h1>
 </template>

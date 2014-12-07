@@ -7,20 +7,26 @@ Template.lessonItem.events({
   }
 })
 
+Template.lessonStudentItem.events({
+  'click': function() {
+    return Session.set("Selected", this._id)
+  }
+})
+
 Template.lessonsList.helpers({
-  lessons: function() {
-    var currentUser = Meteor.user()
-    if (currentUser && currentUser.profile.role === "pupil") {
-      return Lessons.find()
-    }
+  lessonsStudent: function() {
+    return Lessons.find({student_id: Meteor.userId()})
   }
 })
 
 Template.lessonsList.events({
   'click .status': function() {
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.status": "red"}})
-    //var loggedInStudent = Meteor.user()
-    //loggedInStudent.profile.status = "red"
-    //return console.log(loggedInStudent)
-  } 
+  },
+  'click .new-lesson': function() {
+    Lessons.insert({progress: 0, student_id: Meteor.userId(), name: "Science" })
+  },
+  'click .inc-progress': function() {
+    Lessons.update({_id: Session.get("Selected")},  {$inc: {progress: 5} })
+  }
 })
