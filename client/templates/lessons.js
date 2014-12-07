@@ -15,7 +15,8 @@ Template.lessonStudentItem.events({
 
 Template.lessonsList.helpers({
   lessonsStudent: function() {
-    return Lessons.find({student_id: Meteor.userId()})
+    //return Lessons.find({student_id: Meteor.userId()})
+    return Lessons.find()
   }
 })
 

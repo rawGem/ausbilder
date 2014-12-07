@@ -10,8 +10,9 @@
 //  } 
 //});
 
-Meteor.publish("lessons", function(){
-  return Lessons.find()
+Meteor.publish("lessonsForStudents", function(){
+  console.log(this.userId)
+  return Lessons.find({student_id: this.userId})
 })
 
 // Meteor.users is a collection. 

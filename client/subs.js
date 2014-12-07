@@ -6,6 +6,6 @@
 //}
 
 Tracker.autorun(function(){
-  Meteor.subscribe("lessons")
+  Meteor.subscribe("lessonsForStudents")
   Meteor.subscribe("users_for_admin")
 })
