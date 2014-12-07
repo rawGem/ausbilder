@@ -4,6 +4,8 @@
 
 <body>
   {{> loginButtons}}
-  {{> lessonsList}}
-  {{> usersList}}
+  {{#if currentUser}}
+    {{> lessonsList}}
+    {{> usersList}}
+  {{/if}}
 </body>
