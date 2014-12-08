@@ -6,6 +6,12 @@
 //}
 
 Tracker.autorun(function(){
-  Meteor.subscribe("lessonsForStudents")
-  Meteor.subscribe("users_for_admin")
+  if (Meteor.userId() && Meteor.user()) {
+    var currentUser = Meteor.user()
+    if (currentUser.profile.role === "pupil") {
+      Meteor.subscribe("lessonsForStudents")
+    } else if (currentUser.profile.role === "admin") {
+      Meteor.subscribe("users_for_admin")
+    } 
+  }
 })
