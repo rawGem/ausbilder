@@ -10,6 +10,7 @@ Meteor.startup(function() {
       'username': 'Dr. Jones', 
       'email': 'indy@o.e',
       'password': 'pwd',
+      'test': true, 
       'profile': {
         'role':'admin'
       }
@@ -18,6 +19,7 @@ Meteor.startup(function() {
 });
 
 Accounts.onCreateUser( function(options, user){
+  //hardcode Dr. Jones as admin
   if (!options.profile) {
     randomStatus = Math.ceil(Math.random()*10);
     if(randomStatus >= 5) { randomStatus = randomStatus - 5 };
@@ -27,8 +29,11 @@ Accounts.onCreateUser( function(options, user){
     options.profile.role = "pupil";
     options.profile.status = colors[randomStatus];
     user.profile = options.profile
-  } else {
+    user.admin = {}
+    user.admin = false
+  } else {//right now this assumes only admin hits this 
     user.profile = options.profile
+    user.admin = true
   }
 
   return user
