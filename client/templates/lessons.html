@@ -16,9 +16,19 @@
   <button class="inc-progress">Inc Progress</button>
 </template>
 
+<template name="lessonsForAdmin">
+  {{#each lessons}}
+    {{> lessonAdminItem}}
+  {{/each}}
+</template>
+
 <template name="lessonStudentItem">
     <h1>
       {{name}}
       {{progress}}
     </h1>
+</template>
+
+<template name="lessonAdminItem">
+  <ul> {{name}} |{{progress}}</ul>
 </template>

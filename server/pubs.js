@@ -23,3 +23,29 @@ Meteor.publish("users_for_admin", function(user) {
   return Meteor.users.find();
 });
 
+Meteor.publish("lessonsForAdmin", function(){
+  return Lessons.find()
+})
+
+Meteor.publish("thingsForAdmin", function(){
+  var metrics = new Mongo.Collection('metrics');
+  var pipeline = 
+  [
+    {
+      "$match" : {
+        "name" : {
+          "$ne" : "NULL"
+        }
+      }
+    },
+    {
+      "$group" : {
+        "_id" : "$student_id",
+        "lesson_ids" : {
+          "$addToSet" : "$_id"
+        }
+      }
+    }
+  ]
+  var result = metrics.aggregate(pipeline);
+})

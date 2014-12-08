@@ -6,6 +6,11 @@
   {{> loginButtons}}
   {{#if currentUser}}
     {{> lessonsList}}
-    {{> usersList}}
+
+    <div class="container">
+      {{> usersList}}
+    </div>
+
+    {{> lessonsForAdmin}}
   {{/if}}
 </body>
