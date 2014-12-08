@@ -1,24 +1,9 @@
 
-//Meteor.publish("lessons", function(user){
-//  var loggedInUser = Meteor.users.findOne({_id:this.userId});
-//  if (loggedInUser && loggedInUser.profile.hasOwnProperty("role")) {
-//    if (loggedInUser.profile.role === "admin") {
-//      return Lessons.find()
-//    } else if (loggedInUser) {
-//       return Lessons.find({name: "Math"})
-//    }
-//  } 
-//});
-
-
-
 Meteor.publish("lessonsForStudents", function(){
   //console.log(this.userId)
   return Lessons.find({student_id: this.userId})
 })
 
-// Meteor.users is a collection. 
-// Meteor.users.find() is equivalent to Collection.find()
 Meteor.publish("users_for_admin", function(user) {
   //var loggedInUser = Meteor.users.findOne({_id:this.userId});
   //if (loggedInUser && loggedInUser.profile.hasOwnProperty("role")) {

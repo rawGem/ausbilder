@@ -29,8 +29,10 @@ Accounts.onCreateUser( function(options, user){
     options.profile.role = "pupil";
     options.profile.status = colors[randomStatus];
     user.profile = options.profile
+
     user.admin = {}
     user.admin = false
+
   } else {//right now this assumes only admin hits this 
     user.profile = options.profile
     user.admin = true
