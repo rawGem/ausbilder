@@ -1,4 +1,13 @@
 
+// lessons template organized by student
+//
+Template.lessonsForAdminByUser.helpers({
+  lessons: function() {
+    console.log("lessons for admin: rocking and rolling")
+    console.log(lessonsForAdmin.result)
+  }
+})
+
 Template.usersList.helpers({
   // try doing all of the filtering
   // on the client, get it working,
