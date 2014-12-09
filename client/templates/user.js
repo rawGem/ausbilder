@@ -32,11 +32,17 @@ Template.usersList.events({
 
 Template.userItem.helpers({
   email: function() {
-    return _.first(this.emails).address
+    if (this && this.emails) {
+      return _.first(this.emails).address
+    }
   }
 })
 
 Template.userItem.rendered = function() {
+  console.log(this.data && this.data.profile)
+
+  if (this.data && this.data.profile ) {
+
   var id = this.data._id
   var status = this.data.profile.status 
   var address = _.first(this.data.emails).address
@@ -66,4 +72,7 @@ Template.userItem.rendered = function() {
   $(function() {
     $( document ).tooltip();
   });
+
+
+  }
 }

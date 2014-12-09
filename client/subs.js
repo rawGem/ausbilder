@@ -11,12 +11,15 @@ Tracker.autorun(function(){
     var currentUser = Meteor.user()
     
     if (currentUser.profile.role === "pupil") {
-      Meteor.subscribe("lessonsForStudents")
+      var pupilLessonSub = Meteor.subscribe("lessonsForStudents")
 
     } else if (currentUser.profile.role === "admin") {
-      Meteor.subscribe("users_for_admin")
+      var adminUserSub = Meteor.subscribe("users_for_admin", function() {
+        console.log("hello from subs")
+      })
       //Meteor.subscribe("lessonsForStudents")
-      Meteor.subscribe("lessonsForAdmin")
+      var adminLessonSub = Meteor.subscribe("lessonsForAdmin")
+
     } 
   }
 })

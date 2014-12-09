@@ -20,7 +20,12 @@ Meteor.publish("users_for_admin", function(user) {
   //} else {
   //  return null
   //}
-  return Meteor.users.find();
+  if (this.userId) {
+    return Meteor.users.find();
+  } else {
+    this.ready()
+  }
+  
 });
 
 Meteor.publish("lessonsForAdmin", function(){
