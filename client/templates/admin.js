@@ -3,7 +3,6 @@
 //
 Template.lessonsForAdminByUser.helpers({
   lessons: function() {
-    console.log("lessons for admin: rocking and rolling")
     console.log(lessonsForAdmin.result)
   }
 })

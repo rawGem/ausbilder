@@ -14,12 +14,9 @@ Tracker.autorun(function(){
       var pupilLessonSub = Meteor.subscribe("lessonsForStudents")
 
     } else if (currentUser.profile.role === "admin") {
-      var adminUserSub = Meteor.subscribe("users_for_admin", function() {
-        console.log("hello from subs")
-      })
-      //Meteor.subscribe("lessonsForStudents")
+      var adminUserSub = Meteor.subscribe("users_for_admin")
       var adminLessonSub = Meteor.subscribe("lessonsForAdmin")
-
+      //Meteor.subscribe("lessonsForStudents")
     } 
   }
 })
