@@ -1,11 +1,31 @@
 
+
 // have access to object from each iteration gets passed [this]
 //
-Template.lessonItem.events({
-  'click': function() {
-    return console.log(this._id)
+//
+Tracker.autorun(function(){
+  if (Meteor.userId() && Meteor.user()) {
+    var currentUser = Meteor.user()
+    if ( currentUser.admin ) {
+      Session.set("lessonTemplate", "adminLessonList")
+    } else {
+      Session.set("lessonTemplate", "pupilLessonList")
+    }
+    
   }
 })
+
+Template.lessonMain.helpers({
+  lesson: function() {
+    return Session.get("lessonTemplate")
+  }
+})
+
+//Template.lessonItem.events({
+//  'click': function() {
+//    return console.log(this._id)
+//  }
+//})
 
 Template.lessonStudentItem.events({
   'click': function() {
@@ -13,8 +33,14 @@ Template.lessonStudentItem.events({
   }
 })
 
-Template.lessonsList.helpers({
-  lessonsStudent: function() {
+Template.pupilLessonList.helpers({
+  lessons: function() {
+    return Lessons.find()
+  }
+})
+
+Template.adminLessonList.helpers({
+  lessons: function() {
     var loggedInUser = Meteor.user()
     console.log(loggedInUser)
     //return Lessons.find({student_id: Meteor.userId()})
@@ -22,7 +48,7 @@ Template.lessonsList.helpers({
   }
 })
 
-Template.lessonsList.events({
+Template.pupilLessonList.events({
   'click .status': function() {
     Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.status": "red"}})
   },

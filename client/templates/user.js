@@ -1,7 +1,7 @@
 
 // lessons template organized by student
 //
-Template.lessonsForAdmin.helpers({
+Template.adminLessonList.helpers({
   lessons: function() {
     console.log("lessons for admin: rocking and rolling")
     return Lessons.find()

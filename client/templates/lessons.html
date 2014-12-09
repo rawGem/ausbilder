@@ -1,22 +1,15 @@
 
-<template name="lessonItem">
-  <h3>{{name}}</h3>
-</template>
-
-<template name="lessonsList">
+<template name="pupilLessonList">
   {{#each lessons}}
-    {{> lessonItem}}
-  {{/each}}
-
-  {{#each lessonsStudent}}
     {{> lessonStudentItem}}
   {{/each}}
+
   <button class="status">Change Status</button>
   <button class="new-lesson">New Lesson</button>
   <button class="inc-progress">Inc Progress</button>
 </template>
 
-<template name="lessonsForAdmin">
+<template name="adminLessonList">
   {{#each lessons}}
     {{> lessonAdminItem}}
   {{/each}}
