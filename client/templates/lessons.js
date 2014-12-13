@@ -83,3 +83,29 @@ Template.adminLessonList.helpers({
     return Lessons.find({student_id: this._id})
   }
 })
+
+Template.lessonAdminItem.rendered = function() {
+  console.log(this)
+  self = this;
+  var id = this.data._id
+  var selector = "#" + id
+  var svg = d3.select(selector)
+              .append("svg")
+              .attr("width", 50)
+              .attr("height", 50)
+
+  var rect = svg.selectAll("rect")
+               .data([0])
+               .enter()
+               .append("rect");
+  rect.attr("height", 10)
+      .attr("x", 5)
+      .attr("y", 5)
+
+  this.autorun(function() {
+    var lesson = Lessons.findOne({_id: id}) 
+    if (lesson && lesson.progress) {
+      rect.attr("width", lesson.progress)
+    }
+    })
+}
