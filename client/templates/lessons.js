@@ -16,47 +16,33 @@ Tracker.autorun(function(){
   }
 })
 
+
+// Container for lessons templates. 
+// Currently, the templates switch
+// depending on who is logged in, an 
+// admin or a user.
 Template.lessonMain.helpers({
   lesson: function() {
     return Session.get("lessonTemplate")
   }
 })
 
-//Template.lessonItem.events({
-//  'click': function() {
-//    return console.log(this._id)
-//  }
-//})
 
-Template.lessonStudentItem.events({
-  'click': function() {
-    return Session.set("Selected", this._id)
-  }
-})
 
+
+
+//
+// if pupil is logged in
+//
 Template.pupilLessonList.helpers({
   lessons: function() {
     return Lessons.find()
   }
 })
-
-Template.adminLessonListByUser.helpers({
-  users: function() {
-    console.log("adminLessonListByUser fired")
-    return Meteor.users.find()
-  },
-  lessons: function() {
-    var loggedInUser = Meteor.user()
-    console.log(loggedInUser)
-    //return Lessons.find({student_id: Meteor.userId()})
-    return Lessons.find()
-  }
-})
-
-Template.adminLessonList.helpers({
-  userLessons: function() {
-    console.log(this)
-    return Lessons.find({student_id: this._id})
+// inside pupilLessonList
+Template.lessonStudentItem.events({
+  'click': function() {
+    return Session.set("Selected", this._id)
   }
 })
 
@@ -69,5 +55,31 @@ Template.pupilLessonList.events({
   },
   'click .inc-progress': function() {
     Lessons.update({_id: Session.get("Selected")},  {$inc: {progress: 5} })
+  }
+})
+
+
+
+
+
+//
+// if admin is logged in
+//
+Template.adminLessonListByUser.helpers({
+  users: function() {
+    console.log("adminLessonListByUser fired")
+    return Meteor.users.find()
+  },
+  lessons: function() {
+    var loggedInUser = Meteor.user()
+    console.log(loggedInUser)
+    //return Lessons.find({student_id: Meteor.userId()})
+    return Lessons.find()
+  }
+})
+// inside adminLessonListByUser
+Template.adminLessonList.helpers({
+  userLessons: function() {
+    return Lessons.find({student_id: this._id})
   }
 })
