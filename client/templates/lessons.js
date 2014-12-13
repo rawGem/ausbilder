@@ -7,7 +7,8 @@ Tracker.autorun(function(){
   if (Meteor.userId() && Meteor.user()) {
     var currentUser = Meteor.user()
     if ( currentUser.admin ) {
-      Session.set("lessonTemplate", "adminLessonList")
+      Session.set("lessonTemplate", "adminLessonListByUser")
+      console.log(Session.get("lessonTemplate"))
     } else {
       Session.set("lessonTemplate", "pupilLessonList")
     }
@@ -39,12 +40,23 @@ Template.pupilLessonList.helpers({
   }
 })
 
-Template.adminLessonList.helpers({
+Template.adminLessonListByUser.helpers({
+  users: function() {
+    console.log("adminLessonListByUser fired")
+    return Meteor.users.find()
+  },
   lessons: function() {
     var loggedInUser = Meteor.user()
     console.log(loggedInUser)
     //return Lessons.find({student_id: Meteor.userId()})
     return Lessons.find()
+  }
+})
+
+Template.adminLessonList.helpers({
+  userLessons: function() {
+    console.log(this)
+    return Lessons.find({student_id: this._id})
   }
 })
 

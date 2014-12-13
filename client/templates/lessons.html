@@ -9,11 +9,18 @@
   <button class="inc-progress">Inc Progress</button>
 </template>
 
-<template name="adminLessonList">
-  {{#each lessons}}
-    {{> lessonAdminItem}}
+<template name="adminLessonListByUser">
+  {{#each users}}
+    <h3> {{_id}} </h3>
+    {{> adminLessonList}}
   {{/each}}
 </template>
+
+<template name="adminLessonList">
+  {{#each userLessons}}
+    {{> lessonAdminItem}}
+  {{/each}}
+</template> 
 
 <template name="lessonStudentItem">
     <h1>
