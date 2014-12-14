@@ -1,0 +1,9 @@
+///Simulation Mode
+On a button press, the app simulates users changing
+their progress attribute in realtime.
+
+///Data Vis - General Status
+Each student's "section" could have some global indicator,
+such as a background color, colored shape, whatever, that 
+indicates the user's overall status based on some computation
+of it's individual lesson statuses.
