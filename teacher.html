@@ -3,7 +3,6 @@
 </head>
 
 <body>
-  {{> loginButtons}}
 
 
   {{#if currentUser}}
@@ -16,4 +15,12 @@
 
 <template name="lessonMain">
     {{> Template.dynamic template=lesson }}
+</template>
+
+<template name="loginTest">
+  {{> Template.dynamic template=login}}
+</template>
+
+<template name="login">
+  {{> loginButtons}}
 </template>
