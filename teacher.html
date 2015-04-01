@@ -4,14 +4,17 @@
 
 <body>
 
+</body>
 
+<template name="container"> 
   {{#if currentUser}}
     <div class="container">
       {{> lessonMain}}
     </div>
       {{> usersList}}
   {{/if}}
-</body>
+</template>
+
 
 <template name="lessonMain">
     {{> Template.dynamic template=lesson }}
@@ -24,3 +27,8 @@
 <template name="login">
   {{> loginButtons}}
 </template>
+
+<template name="home">
+  <h1> TEST </h1>
+</template>
+

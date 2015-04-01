@@ -7,10 +7,10 @@ meteor-platform
 insecure
 accounts-password
 alanning:roles
-accounts-ui
 d3
 mizzao:jquery-ui
 meteorhacks:aggregate
-meteorhacks:flow-router
-meteorhacks:flow-layout
 
+useraccounts:foundation
+less
+nsmeta:zurb-foundation
